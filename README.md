@@ -1,6 +1,6 @@
 # TikTok App in Swift
 
-This is the source code repo for the tiktok app that we built in swift
+This is the source code repo for the tiktok app that I built in swift
 
 ## Features
 - Feed
