@@ -28,6 +28,8 @@
 		0A51276A270D6E310033A48B /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A512769270D6E310033A48B /* AuthenticationManager.swift */; };
 		0A51276C270D6E5F0033A48B /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51276B270D6E5F0033A48B /* HapticsManager.swift */; };
 		0A51276E270D74E60033A48B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A51276D270D74E60033A48B /* GoogleService-Info.plist */; };
+		0A512771270D892D0033A48B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A512770270D892D0033A48B /* Extensions.swift */; };
+		0A512773270D90F70033A48B /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A512772270D90F70033A48B /* PostModel.swift */; };
 		D4800ED0397562117B0F59F8 /* Pods_TikTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A1114FD997E27C2A3687B9 /* Pods_TikTok.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,8 @@
 		0A512769270D6E310033A48B /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		0A51276B270D6E5F0033A48B /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		0A51276D270D74E60033A48B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0A512770270D892D0033A48B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0A512772270D90F70033A48B /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		93A1114FD997E27C2A3687B9 /* Pods_TikTok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TikTok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E15A3E396E9470B97F4F1044 /* Pods-TikTok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTok.release.xcconfig"; path = "Target Support Files/Pods-TikTok/Pods-TikTok.release.xcconfig"; sourceTree = "<group>"; };
 		E17860B5CA3B60AB8160906E /* Pods-TikTok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTok.debug.xcconfig"; path = "Target Support Files/Pods-TikTok/Pods-TikTok.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				0A512731270D62280033A48B /* AppDelegate.swift */,
 				0A512733270D62280033A48B /* SceneDelegate.swift */,
 				0A51276D270D74E60033A48B /* GoogleService-Info.plist */,
+				0A512770270D892D0033A48B /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 		0A512748270D6B190033A48B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0A512772270D90F70033A48B /* PostModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -349,12 +355,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A51276C270D6E5F0033A48B /* HapticsManager.swift in Sources */,
+				0A512773270D90F70033A48B /* PostModel.swift in Sources */,
 				0A512768270D6E1A0033A48B /* DataBaseManager.swift in Sources */,
 				0A51274E270D6C4F0033A48B /* ExploreViewController.swift in Sources */,
 				0A512756270D6CCE0033A48B /* UserListViewController.swift in Sources */,
 				0A51275C270D6CFE0033A48B /* SettingsViewController.swift in Sources */,
 				0A512764270D6DB40033A48B /* APICaller.swift in Sources */,
 				0A512762270D6D920033A48B /* PostViewController.swift in Sources */,
+				0A512771270D892D0033A48B /* Extensions.swift in Sources */,
 				0A512750270D6C6B0033A48B /* CameraViewController.swift in Sources */,
 				0A512736270D62280033A48B /* HomeViewController.swift in Sources */,
 				0A51275A270D6CEF0033A48B /* SignUpViewController.swift in Sources */,
