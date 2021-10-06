@@ -30,6 +30,9 @@
 		0A51276E270D74E60033A48B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A51276D270D74E60033A48B /* GoogleService-Info.plist */; };
 		0A512771270D892D0033A48B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A512770270D892D0033A48B /* Extensions.swift */; };
 		0A512773270D90F70033A48B /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A512772270D90F70033A48B /* PostModel.swift */; };
+		0A512775270DE7360033A48B /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A512774270DE7360033A48B /* CommentViewController.swift */; };
+		0A512777270DFDE60033A48B /* PostComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A512776270DFDE60033A48B /* PostComment.swift */; };
+		0A512779270DFE2A0033A48B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A512778270DFE2A0033A48B /* User.swift */; };
 		D4800ED0397562117B0F59F8 /* Pods_TikTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A1114FD997E27C2A3687B9 /* Pods_TikTok.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +62,9 @@
 		0A51276D270D74E60033A48B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0A512770270D892D0033A48B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0A512772270D90F70033A48B /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		0A512774270DE7360033A48B /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		0A512776270DFDE60033A48B /* PostComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComment.swift; sourceTree = "<group>"; };
+		0A512778270DFE2A0033A48B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		93A1114FD997E27C2A3687B9 /* Pods_TikTok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TikTok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E15A3E396E9470B97F4F1044 /* Pods-TikTok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTok.release.xcconfig"; path = "Target Support Files/Pods-TikTok/Pods-TikTok.release.xcconfig"; sourceTree = "<group>"; };
 		E17860B5CA3B60AB8160906E /* Pods-TikTok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTok.debug.xcconfig"; path = "Target Support Files/Pods-TikTok/Pods-TikTok.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				0A512772270D90F70033A48B /* PostModel.swift */,
+				0A512776270DFDE60033A48B /* PostComment.swift */,
+				0A512778270DFE2A0033A48B /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,6 +194,7 @@
 				0A512759270D6CEF0033A48B /* SignUpViewController.swift */,
 				0A51275B270D6CFE0033A48B /* SettingsViewController.swift */,
 				0A512761270D6D920033A48B /* PostViewController.swift */,
+				0A512774270DE7360033A48B /* CommentViewController.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -368,12 +377,15 @@
 				0A51275A270D6CEF0033A48B /* SignUpViewController.swift in Sources */,
 				0A512752270D6C8D0033A48B /* NotificationsViewController.swift in Sources */,
 				0A51276A270D6E310033A48B /* AuthenticationManager.swift in Sources */,
+				0A512775270DE7360033A48B /* CommentViewController.swift in Sources */,
+				0A512777270DFDE60033A48B /* PostComment.swift in Sources */,
 				0A512758270D6CDC0033A48B /* SignInViewController.swift in Sources */,
 				0A512754270D6CB00033A48B /* ProfileViewController.swift in Sources */,
 				0A51275E270D6D290033A48B /* TabBarViewController.swift in Sources */,
 				0A512766270D6DEE0033A48B /* StorageManager.swift in Sources */,
 				0A512732270D62280033A48B /* AppDelegate.swift in Sources */,
 				0A512734270D62280033A48B /* SceneDelegate.swift in Sources */,
+				0A512779270DFE2A0033A48B /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

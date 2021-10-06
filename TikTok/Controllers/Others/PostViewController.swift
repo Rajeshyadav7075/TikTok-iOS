@@ -7,8 +7,15 @@
 
 import UIKit
 
+protocol PostViewControllerDelegate: AnyObject {
+    
+    func postViewController(_ vc: PostViewController, didTapCommentButtonFor post: PostModel)
+}
+
 class PostViewController: UIViewController {
 
+    weak var delegate: PostViewControllerDelegate?
+    
     var model: PostModel
     
     private let likeButton: UIButton = {
@@ -120,7 +127,7 @@ class PostViewController: UIViewController {
     
     @objc func didTapComment() {
         
-        
+        delegate?.postViewController(self, didTapCommentButtonFor: model)
     }
     
     @objc func didTapShare() {
