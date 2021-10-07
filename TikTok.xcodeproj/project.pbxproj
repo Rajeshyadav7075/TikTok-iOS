@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A071575270EB104000F4F09 /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A071574270EB104000F4F09 /* CommentsTableViewCell.swift */; };
 		0A512732270D62280033A48B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A512731270D62280033A48B /* AppDelegate.swift */; };
 		0A512734270D62280033A48B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A512733270D62280033A48B /* SceneDelegate.swift */; };
 		0A512736270D62280033A48B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A512735270D62280033A48B /* HomeViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A071574270EB104000F4F09 /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		0A51272E270D62280033A48B /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A512731270D62280033A48B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A512733270D62280033A48B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		0A512760270D6D690033A48B /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				0A071574270EB104000F4F09 /* CommentsTableViewCell.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				0A512756270D6CCE0033A48B /* UserListViewController.swift in Sources */,
 				0A51275C270D6CFE0033A48B /* SettingsViewController.swift in Sources */,
 				0A512764270D6DB40033A48B /* APICaller.swift in Sources */,
+				0A071575270EB104000F4F09 /* CommentsTableViewCell.swift in Sources */,
 				0A512762270D6D920033A48B /* PostViewController.swift in Sources */,
 				0A512771270D892D0033A48B /* Extensions.swift in Sources */,
 				0A512750270D6C6B0033A48B /* CameraViewController.swift in Sources */,

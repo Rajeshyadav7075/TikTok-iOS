@@ -10,6 +10,7 @@ import UIKit
 protocol PostViewControllerDelegate: AnyObject {
     
     func postViewController(_ vc: PostViewController, didTapCommentButtonFor post: PostModel)
+    func postViewController(_ vc: PostViewController, didTapProfileButtonFor post: PostModel)
 }
 
 class PostViewController: UIViewController {
@@ -48,6 +49,16 @@ class PostViewController: UIViewController {
         return button
     }()
     
+    private let profileButton: UIButton = {
+       
+        let button = UIButton()
+        button.setBackgroundImage(UIImage(named: "Test"), for: .normal)
+        button.tintColor = .white
+        button.layer.masksToBounds = true
+        button.imageView?.contentMode = .scaleAspectFit
+        
+        return button
+    }()
     
     private let captionLabel: UILabel = {
        
@@ -82,6 +93,8 @@ class PostViewController: UIViewController {
         setUpButtons()
         setDoubleTapToLike()
         view.addSubview(captionLabel)
+        view.addSubview(profileButton)
+        profileButton.addTarget(self, action: #selector(didTapProfileButton), for: .touchUpInside)
     }
 
     override func viewDidLayoutSubviews() {
@@ -93,16 +106,36 @@ class PostViewController: UIViewController {
         
         for (index, button) in [likeButton, commentButton, shareButton].enumerated() {
             
-            button.frame = CGRect(x: view.width-size-10, y: yStart + (CGFloat(index) * 10) + (CGFloat(index) * size), width: size, height: size)
+            button.frame = CGRect(
+                x: view.width-size-10,
+                y: yStart + (CGFloat(index) * 10) + (CGFloat(index) * size),
+                width: size,
+                height: size)
         }
         
         captionLabel.sizeToFit()
         
         let labelSize = captionLabel.sizeThatFits(CGSize(width: view.width - size - 12, height: view.height))
         
-        captionLabel.frame = CGRect(x: 5, y: view.height - 10 - view.safeAreaInsets.bottom - labelSize.height - (tabBarController?.tabBar.height ?? 0), width: view.width - size - 12, height: labelSize.height)
+        captionLabel.frame = CGRect(
+            x: 5,
+            y: view.height - 10 - view.safeAreaInsets.bottom - labelSize.height - (tabBarController?.tabBar.height ?? 0),
+            width: view.width - size - 12,
+            height: labelSize.height)
         
+        profileButton.frame = CGRect(
+            x: likeButton.left,
+            y: likeButton.top - 10 - size,
+            width: size,
+            height: size)
         
+        profileButton.layer.cornerRadius = size / 2
+        
+    }
+    
+    @objc func didTapProfileButton() {
+        
+        delegate?.postViewController(self, didTapProfileButtonFor: model)
     }
     
     func setUpButtons() {

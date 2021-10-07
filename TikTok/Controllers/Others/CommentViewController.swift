@@ -21,6 +21,7 @@ class CommentViewController: UIViewController {
         
         let tableView = UITableView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(CommentsTableViewCell.self, forCellReuseIdentifier: CommentsTableViewCell.identifier)
         
         return tableView
     }()
@@ -53,7 +54,7 @@ class CommentViewController: UIViewController {
 
         view.addSubview(closeButton)
         closeButton.addTarget(self, action: #selector(didTapClose), for: .touchUpInside)
-        view.backgroundColor = .systemPink
+        view.backgroundColor = .white
         fetchPostComments()
         
         view.addSubview(tableView)
@@ -93,10 +94,24 @@ extension CommentViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let comment = comments[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = comment.text
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CommentsTableViewCell.identifier, for: indexPath) as? CommentsTableViewCell
+        else {
+            return UITableViewCell()
+        }
+        
+        cell.configuration(with: comment)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 80
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

@@ -222,13 +222,30 @@ extension HomeViewController: PostViewControllerDelegate {
         addChild(vc)
         vc.didMove(toParent: self)
         view.addSubview(vc.view)
-        let frame:CGRect = CGRect(x: 0, y: view.height, width: view.width, height: view.height * 0.76)
+        let frame:CGRect = CGRect(
+            x: 0,
+            y: view.height,
+            width: view.width,
+            height: view.height * 0.76)
         
         vc.view.frame = frame
         
         UIView.animate(withDuration: 0.2) {
-            vc.view.frame = CGRect(x: 0, y: self.view.height - frame.height, width: frame.width, height: frame.height)
+            vc.view.frame = CGRect(
+                x: 0,
+                y: self.view.height - frame.height,
+                width: frame.width,
+                height: frame.height)
         }
+    }
+    
+    func postViewController(_ vc: PostViewController, didTapProfileButtonFor post: PostModel) {
+        
+        let user = post.user
+        
+        let vc = ProfileViewController(user: user)
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -241,7 +258,11 @@ extension HomeViewController: CommentViewControllerDelegate {
         // close comment with animation
         let frame = viewController.view.frame
         UIView.animate(withDuration: 0.2) {
-            viewController.view.frame = CGRect(x: 0, y: self.view.height, width: frame.width, height: frame.height) } completion: { done in
+            viewController.view.frame = CGRect(
+                x: 0,
+                y: self.view.height,
+                width: frame.width,
+                height: frame.height) } completion: { done in
                 
                 if done {
                     DispatchQueue.main.async {

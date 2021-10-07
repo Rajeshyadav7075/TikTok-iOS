@@ -10,6 +10,6 @@ import Foundation
 struct User {
     
     let userName: String
-    let profilePicURL: String
+    let profilePicURL: String?
     let identifier: String
 }
