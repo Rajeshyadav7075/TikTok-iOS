@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 protocol PostViewControllerDelegate: AnyObject {
     
@@ -67,11 +68,14 @@ class PostViewController: UIViewController {
         label.numberOfLines = 0
         label.text = "Check Out this Video Check Out this Video Check Out this Video #Rajesh #iOS_dev"
         label.font = .systemFont(ofSize: 22)
-        label.textColor = .black
+        label.textColor = .white
         
         return label
     }()
     
+    var player: AVPlayer?
+    
+    private var playerDisFinishObserver: NSObjectProtocol?
     
     init(model: PostModel) {
         
@@ -85,16 +89,20 @@ class PostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        configureVideo()
+        
         let colors: [UIColor] = [.red, .gray, .green, .orange, .blue, .white]
         
         view.backgroundColor = colors.randomElement()
         
         setUpButtons()
         setDoubleTapToLike()
+        setSingleTapToPause()
         view.addSubview(captionLabel)
         view.addSubview(profileButton)
         profileButton.addTarget(self, action: #selector(didTapProfileButton), for: .touchUpInside)
+        
     }
 
     override func viewDidLayoutSubviews() {
@@ -131,6 +139,37 @@ class PostViewController: UIViewController {
         
         profileButton.layer.cornerRadius = size / 2
         
+    }
+    
+    private func configureVideo() {
+        
+        guard let path = Bundle.main.path(forResource: "sampleVideo", ofType: "mp4") else {
+            return
+        }
+        
+        let url = URL(fileURLWithPath: path)
+        player = AVPlayer(url: url)
+        
+        let playerLayer = AVPlayerLayer(player: player)
+        
+        playerLayer.frame = view.bounds
+        playerLayer.videoGravity = .resizeAspectFill
+        
+        view.layer.addSublayer(playerLayer)
+        player?.volume = 0
+        
+        player?.play()
+        
+        guard let player = player else {
+            
+            return
+        }
+        
+        playerDisFinishObserver = NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main, using: { _ in
+            
+            player.seek(to: .zero)
+            player.play()
+        })
     }
     
     @objc func didTapProfileButton() {
@@ -172,6 +211,18 @@ class PostViewController: UIViewController {
         present(vc, animated: true)
     }
     
+    func setSingleTapToPause() {
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didSingleTap(_:)))
+        tap.numberOfTapsRequired = 1
+        view.addGestureRecognizer(tap)
+        view.isUserInteractionEnabled = true
+    }
+    
+    @objc func didSingleTap(_ gesture:UITapGestureRecognizer) {
+        
+        player?.pause()
+    }
     
     func setDoubleTapToLike() {
         
